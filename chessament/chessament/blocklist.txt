@@ -1,0 +1,21 @@
+# we use a icontheme.rc on windows
+bin/data/icons/.*
+
+# kill qsvgengine, we use our KIconThemes engine with re-coloring
+bin/iconengines/qsvgicon.*
+
+# we don't need kcharselect
+bin/data/kf5/kcharselect/kcharselect-data
+
+# doubled icu dlls
+bin/icudt\.dll
+bin/icuin\.dll
+bin/icuuc\.dll
+bin/icuio\.dll
+bin/icutu\.dll
+bin/icutest\.dll
+
+# remove Material styles
+qml/QtQuick/Controls/Material/.*
+lib/qml/org/kde/kirigami/styles/Material/.*
+
