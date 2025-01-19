@@ -6,13 +6,12 @@ from CraftCore import CraftCore
 
 class subinfo(info.infoclass):
     def setTargets(self):
-        self.versionInfo.setDefaultValues(
-            gitUrl="https://github.com/alcarazzam/chessament.git"
-        )
-
         self.displayName = "Chessament"
         self.description = "Chess tournament manager"
         self.webpage = "https://chessament.alcarazzam.dev"
+
+        self.svnTargets["master"] = "https://github.com/alcarazzam/chessament.git"
+        self.defaultTarget = "master"
 
     def setDependencies(self):
         self.buildDependencies["libs/qt/qttools"] = None
