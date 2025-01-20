@@ -49,8 +49,19 @@ class Package(CraftPackageObject.get("kde").pattern):
     def createPackage(self):
         self.blacklist_file.append(self.blueprintDir() / "blocklist.txt")
 
+        self.defines["company"] = "alcarazzam.dev"
+        self.defines["shortcuts"] = [
+            {
+                "name": "Chessament",
+                "target": "bin/chessament.exe",
+                "appId": "chessament",
+                "icon": self.buildDir() / "src/CHESSAMENT_ICON.ico",
+            }
+        ]
+        self.defines["icon"] = self.buildDir() / "src/CHESSAMENT_ICON.ico"
+
         self.addExecutableFilter(
-            r"(bin|libexec)/(?!(chessament|QtWebEngineProcess|update-mime-database)).*"
+            r"(bin|libexec)/(?!(chessament|QtWebEngineProcess|update-mime-database|snoretoast)).*"
         )
         self.ignoredPackages.append("binary/mysql")
 
