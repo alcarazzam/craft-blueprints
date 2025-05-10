@@ -8,10 +8,8 @@ class subinfo(info.infoclass):
     def setTargets(self):
         self.displayName = "Chessament"
         self.description = "Chess tournament manager"
-        self.webpage = "https://chessament.alcarazzam.dev"
 
-        self.svnTargets["master"] = "https://github.com/alcarazzam/chessament.git"
-        self.defaultTarget = "master"
+        self.svnTargets["master"] = "https://invent.kde.org/games/chessament.git"
 
     def setDependencies(self):
         self.buildDependencies["libs/qt/qttools"] = None
@@ -30,6 +28,7 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["kde/frameworks/tier1/kitemmodels"] = None
 
         self.runtimeDependencies["qt-libs/qcoro"] = None
+        self.runtimeDependencies["qt-libs/qtkeychain"] = None
 
         self.runtimeDependencies["kde/unreleased/kirigami-addons"] = None
         self.runtimeDependencies["kde/frameworks/tier1/breeze-icons"] = None
